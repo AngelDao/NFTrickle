@@ -55,7 +55,7 @@
         19
       ],
       "IERC20": [
-        2129
+        2168
       ]
     },
     "id": 20,
@@ -82,7 +82,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 20,
-        "sourceUnit": 2130,
+        "sourceUnit": 2169,
         "src": "67:56:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -161,17 +161,17 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20_$2129",
+                    "typeIdentifier": "t_contract$_IERC20_$2168",
                     "typeString": "contract IERC20"
                   },
                   "typeName": {
                     "id": 7,
                     "name": "IERC20",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 2129,
+                    "referencedDeclaration": 2168,
                     "src": "234:6:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20_$2129",
+                      "typeIdentifier": "t_contract$_IERC20_$2168",
                       "typeString": "contract IERC20"
                     }
                   },
@@ -288,7 +288,7 @@
           19
         ],
         "IERC20": [
-          2129
+          2168
         ]
       },
       "license": "MIT"
@@ -312,7 +312,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 2130,
+          "SourceUnit": 2169,
           "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
           "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
           "scope": 20,
@@ -430,7 +430,7 @@
                       {
                         "attributes": {
                           "name": "IERC20",
-                          "referencedDeclaration": 2129,
+                          "referencedDeclaration": 2168,
                           "type": "contract IERC20"
                         },
                         "id": 7,
@@ -566,7 +566,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-21T05:33:44.420Z",
+  "updatedAt": "2021-03-21T16:14:54.172Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

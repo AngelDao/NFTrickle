@@ -34,6 +34,8 @@ contract ShopFactory {
             registeredClones[_NFT] == true,
             "Clone has already been deployed"
         );
+        uint256 nftbal = _NFT.balanceOf(address(this), 0);
+        require(nftbal > 0, "Need an NFT balance to open up a shop");
         Shop clone =
             new Shop(
                 host,
@@ -43,7 +45,7 @@ contract ShopFactory {
                 _endBlockBuffer,
                 _tokenToPayIn
             );
-
+        _NFT.safeTransferFrom(msg.sender, address(clone), 0, nftbal, "0x0");
         deployedClones[_NFT] = clone;
         registeredClones[_NFT] = true;
     }

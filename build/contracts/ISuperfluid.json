@@ -42,7 +42,7 @@
         19
       ],
       "IERC20": [
-        2129
+        2168
       ],
       "ISuperfluid": [
         33
@@ -217,7 +217,7 @@
           19
         ],
         "IERC20": [
-          2129
+          2168
         ],
         "ISuperfluid": [
           33
@@ -420,7 +420,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-21T05:33:44.433Z",
+  "updatedAt": "2021-03-21T16:14:54.186Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
