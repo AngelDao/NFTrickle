@@ -19,6 +19,7 @@ contract Shop {
     address NFT;
     address owner;
     uint256 endBlock;
+    uint256 NFTPerShare;
     address tokenToPayIn;
     address[] buyers;
     mapping(address => uint256) buyerOwnership;
@@ -42,11 +43,10 @@ contract Shop {
         tokenToPayIn = _tokenToPayIn;
     }
 
-    function claim(uint256 _amount, uint256 _pid) public {
+    function stop(uint256 _amount, uint256 _pid) public {
         require(block.number >= endblock, "Not yet :)");
         uint256 i = 0;
         uint256 len = buyers.length;
-        uint256 bal = tokenToPayIn.balanceOf(address(this));
         for (i = 0; i < len; ++i) {
             uint256 share = _cfa.getFlow(_acceptedToken, sender, address(this));
             buyerOwnership[buyers[i]] = share;
@@ -62,6 +62,12 @@ contract Shop {
                 "0x"
             );
         }
+    }
+
+    function claim() public {
+        require(buyerOwnership[msg.sender] > 0, "nothing to claim");
+        uint256 bal = tokenToPayIn.balanceOf(address(this));
+        uint256 nftBal = NFT.balanceOf(address(this));
     }
 
     function setBuyers(address[] _buyers) public {
