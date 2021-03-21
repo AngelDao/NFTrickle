@@ -9,5 +9,5 @@ contract IConstantFlowAgreementV1 {
         IERC20 _token,
         address _sender,
         address _reciever
-    ) public {}
+    ) public returns (uint256) {}
 }

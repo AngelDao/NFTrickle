@@ -77,7 +77,14 @@ contract Shop {
         require(buyerOwnership[msg.sender] > 0, "nothing to claim");
         uint256 share = buyerOwnership[msg.sender];
         uint256 toSend = share.mul(NFTPerShare).div(1e12);
-        address(NFT).transfer(msg.sender, toSend);
+        NFT.safeTransferFrom(
+            address(this),
+            address(msg.sender),
+            0,
+            toSend,
+            "0x0"
+        );
+        (address(msg.sender), toSend);
     }
 
     function setBuyers(address[] memory _buyers) public {

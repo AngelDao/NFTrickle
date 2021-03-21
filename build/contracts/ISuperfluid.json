@@ -1,0 +1,434 @@
+{
+  "contractName": "ISuperfluid",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IConstantFlowAgreementV1",
+          "name": "c",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "a",
+          "type": "bytes"
+        },
+        {
+          "internalType": "string",
+          "name": "b",
+          "type": "string"
+        }
+      ],
+      "name": "callAgreement",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IConstantFlowAgreementV1\",\"name\":\"c\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"a\",\"type\":\"bytes\"},{\"internalType\":\"string\",\"name\":\"b\",\"type\":\"string\"}],\"name\":\"callAgreement\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/danie/code/NFTrickle/contracts/ISuperfluid.sol\":\"ISuperfluid\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/danie/code/NFTrickle/contracts/IConstantFlowAgreementV1.sol\":{\"keccak256\":\"0xbf5afa63b7eea1dfc0391e4270fa40c5026761ed409619344eb34970d51eec70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e231e68347fff96ad4ebb678af403b58102f07005cd4612506799dfccc50959f\",\"dweb:/ipfs/QmPsrunDSWZEQpqbMZfyPDGAR18KiGTK16pUq6M6HXHVxS\"]},\"/C/Users/danie/code/NFTrickle/contracts/ISuperfluid.sol\":{\"keccak256\":\"0x4ceb474a9adcf31c14166ba40e5fd0a2d4387524262cb4e2bd054fb7997842c8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5ae451ff255aa18499a387ce916ec072e054e95549a2f561bea2bab5070b7c4f\",\"dweb:/ipfs/QmPUuakxzZhZpHtMQDRZB9iz5GLcGzEg5tiJ7bJDhBWANe\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101dc806100206000396000f3fe608060405234801561001057600080fd5b506004361061002a5760003560e01c80627398f11461002f575b600080fd5b61019f6004803603606081101561004557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019064010000000081111561008257600080fd5b82018360208201111561009457600080fd5b803590602001918460018302840111640100000000831117156100b657600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561011957600080fd5b82018360208201111561012b57600080fd5b8035906020019184600183028401116401000000008311171561014d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101a1565b005b50505056fea26469706673582212203be2d047bb598744332d928e0d3e612bcae6419373cadeb6213490d73a8c953f64736f6c63430007060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002a5760003560e01c80627398f11461002f575b600080fd5b61019f6004803603606081101561004557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019064010000000081111561008257600080fd5b82018360208201111561009457600080fd5b803590602001918460018302840111640100000000831117156100b657600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561011957600080fd5b82018360208201111561012b57600080fd5b8035906020019184600183028401116401000000008311171561014d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101a1565b005b50505056fea26469706673582212203be2d047bb598744332d928e0d3e612bcae6419373cadeb6213490d73a8c953f64736f6c63430007060033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "113:158:1:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "113:158:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;141:127;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\nimport \"./IConstantFlowAgreementV1.sol\";\r\n\r\ncontract ISuperfluid {\r\n    function callAgreement(\r\n        IConstantFlowAgreementV1 c,\r\n        bytes memory a,\r\n        string memory b\r\n    ) public {}\r\n}\r\n",
+  "sourcePath": "C:\\Users\\danie\\code\\NFTrickle\\contracts\\ISuperfluid.sol",
+  "ast": {
+    "absolutePath": "/C/Users/danie/code/NFTrickle/contracts/ISuperfluid.sol",
+    "exportedSymbols": {
+      "IConstantFlowAgreementV1": [
+        19
+      ],
+      "IERC20": [
+        2129
+      ],
+      "ISuperfluid": [
+        33
+      ]
+    },
+    "id": 34,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 21,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:1"
+      },
+      {
+        "absolutePath": "/C/Users/danie/code/NFTrickle/contracts/IConstantFlowAgreementV1.sol",
+        "file": "./IConstantFlowAgreementV1.sol",
+        "id": 22,
+        "nodeType": "ImportDirective",
+        "scope": 34,
+        "sourceUnit": 20,
+        "src": "69:40:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 33,
+        "linearizedBaseContracts": [
+          33
+        ],
+        "name": "ISuperfluid",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 31,
+              "nodeType": "Block",
+              "src": "266:2:1",
+              "statements": []
+            },
+            "functionSelector": "007398f1",
+            "id": 32,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "callAgreement",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24,
+                  "mutability": "mutable",
+                  "name": "c",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 32,
+                  "src": "174:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IConstantFlowAgreementV1_$19",
+                    "typeString": "contract IConstantFlowAgreementV1"
+                  },
+                  "typeName": {
+                    "id": 23,
+                    "name": "IConstantFlowAgreementV1",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 19,
+                    "src": "174:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IConstantFlowAgreementV1_$19",
+                      "typeString": "contract IConstantFlowAgreementV1"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26,
+                  "mutability": "mutable",
+                  "name": "a",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 32,
+                  "src": "211:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 25,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "211:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28,
+                  "mutability": "mutable",
+                  "name": "b",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 32,
+                  "src": "236:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 27,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "163:95:1"
+            },
+            "returnParameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "266:0:1"
+            },
+            "scope": 33,
+            "src": "141:127:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 34,
+        "src": "113:158:1"
+      }
+    ],
+    "src": "33:240:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/danie/code/NFTrickle/contracts/ISuperfluid.sol",
+      "exportedSymbols": {
+        "IConstantFlowAgreementV1": [
+          19
+        ],
+        "IERC20": [
+          2129
+        ],
+        "ISuperfluid": [
+          33
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 21,
+        "name": "PragmaDirective",
+        "src": "33:32:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 20,
+          "absolutePath": "/C/Users/danie/code/NFTrickle/contracts/IConstantFlowAgreementV1.sol",
+          "file": "./IConstantFlowAgreementV1.sol",
+          "scope": 34,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 22,
+        "name": "ImportDirective",
+        "src": "69:40:1"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            33
+          ],
+          "name": "ISuperfluid",
+          "scope": 34
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "007398f1",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "callAgreement",
+              "scope": 33,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "c",
+                      "scope": 32,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract IConstantFlowAgreementV1",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "IConstantFlowAgreementV1",
+                          "referencedDeclaration": 19,
+                          "type": "contract IConstantFlowAgreementV1"
+                        },
+                        "id": 23,
+                        "name": "UserDefinedTypeName",
+                        "src": "174:24:1"
+                      }
+                    ],
+                    "id": 24,
+                    "name": "VariableDeclaration",
+                    "src": "174:26:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "a",
+                      "scope": 32,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 25,
+                        "name": "ElementaryTypeName",
+                        "src": "211:5:1"
+                      }
+                    ],
+                    "id": 26,
+                    "name": "VariableDeclaration",
+                    "src": "211:14:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "b",
+                      "scope": 32,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 27,
+                        "name": "ElementaryTypeName",
+                        "src": "236:6:1"
+                      }
+                    ],
+                    "id": 28,
+                    "name": "VariableDeclaration",
+                    "src": "236:15:1"
+                  }
+                ],
+                "id": 29,
+                "name": "ParameterList",
+                "src": "163:95:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 30,
+                "name": "ParameterList",
+                "src": "266:0:1"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 31,
+                "name": "Block",
+                "src": "266:2:1"
+              }
+            ],
+            "id": 32,
+            "name": "FunctionDefinition",
+            "src": "141:127:1"
+          }
+        ],
+        "id": 33,
+        "name": "ContractDefinition",
+        "src": "113:158:1"
+      }
+    ],
+    "id": 34,
+    "name": "SourceUnit",
+    "src": "33:240:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-03-21T05:33:44.433Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

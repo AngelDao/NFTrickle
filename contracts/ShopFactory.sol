@@ -3,13 +3,25 @@ pragma solidity >=0.4.22 <0.9.0;
 import "./Shop.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
+import "./IConstantFlowAgreementV1.sol";
+
+import "./ISuperfluid.sol";
 
 contract ShopFactory {
     address owner;
 
-    mapping(IERC1155 => address) deployedClones;
+    mapping(IERC1155 => Shop) deployedClones;
+    mapping(IERC1155 => bool) registeredClones;
+    ISuperfluid host;
+    IConstantFlowAgreementV1 cfa;
 
-    constructor(address _owner) {
+    constructor(
+        ISuperfluid _host,
+        IConstantFlowAgreementV1 _cfa,
+        address _owner
+    ) {
+        cfa = _cfa;
+        host = _host;
         owner = _owner;
     }
 
@@ -19,12 +31,20 @@ contract ShopFactory {
         IERC20 _tokenToPayIn
     ) public {
         require(
-            deployedClones[_NFT] == address(0),
+            registeredClones[_NFT] == true,
             "Clone has already been deployed"
         );
         Shop clone =
-            new Shop(_NFT, address(msg.sender), _endBlockBuffer, _tokenToPayIn);
+            new Shop(
+                host,
+                cfa,
+                _NFT,
+                address(msg.sender),
+                _endBlockBuffer,
+                _tokenToPayIn
+            );
 
         deployedClones[_NFT] = clone;
+        registeredClones[_NFT] = true;
     }
 }
