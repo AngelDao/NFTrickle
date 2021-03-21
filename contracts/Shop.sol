@@ -62,12 +62,14 @@ contract Shop {
                 "0x"
             );
         }
+        uint256 bal = tokenToPayIn.balanceOf(address(this));
+        uint256 nftBal = NFT.balanceOf(address(this));
+        // need to solve for the nftPerShare
+        // nftPerShare = ????
     }
 
     function claim() public {
         require(buyerOwnership[msg.sender] > 0, "nothing to claim");
-        uint256 bal = tokenToPayIn.balanceOf(address(this));
-        uint256 nftBal = NFT.balanceOf(address(this));
     }
 
     function setBuyers(address[] _buyers) public {
