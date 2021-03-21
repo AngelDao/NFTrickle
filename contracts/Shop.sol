@@ -1,5 +1,7 @@
 pragma solidity >=0.4.22 <0.9.0;
 import "@openzeppelin/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
 
 import {
     ISuperfluid,
@@ -16,11 +18,11 @@ import {
 contract Shop {
     using SafeMath for uint256;
 
-    address NFT;
+    IERC1155 NFT;
     address owner;
     uint256 endBlock;
     uint256 NFTPerShare;
-    address tokenToPayIn;
+    IERC20 tokenToPayIn;
     address[] buyers;
     mapping(address => uint256) buyerOwnership;
     ISuperfluid host;
@@ -29,10 +31,10 @@ contract Shop {
     constructor(
         ISuperfluid _host,
         IConstanFlowAgreementV1 _cfa,
-        address _NFT,
+        IERC1155 _NFT,
         address _owner,
         uint256 _endBlockBuffer,
-        address _tokenToPayIn
+        IERC20 _tokenToPayIn
     ) {
         cfa = _cfa;
         host = _host;
