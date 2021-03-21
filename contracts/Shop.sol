@@ -79,6 +79,4 @@ contract Shop {
         require(owner == msg.sender, "Only owner can call");
         buyers = _buyers;
     }
-
-    function buy() public {}
 }

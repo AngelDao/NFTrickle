@@ -5,6 +5,8 @@ import "./Shop.sol";
 contract ShopFactory {
     address owner;
 
+    mapping(address => address) deployedClones;
+
     constructor(address _owner) {
         owner = _owner;
     }
@@ -14,7 +16,13 @@ contract ShopFactory {
         uint256 _endBlockBuffer,
         address _tokenToPayIn
     ) public {
+        require(
+            deployedClones[_NFT] == address(0),
+            "Clone has already been deployed"
+        );
         Shop clone =
             new Shop(_NFT, address(msg.sender), _endBlockBuffer, _tokenToPayIn);
+
+        deployedClones[_NFT] = clone;
     }
 }
