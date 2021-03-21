@@ -21,6 +21,7 @@ contract Shop {
     uint256 endBlock;
     address tokenToPayIn;
     address[] buyers;
+    mapping(address => uint256) buyerOwnership;
     ISuperfluid host;
     IConstanFlowAgreementV1 cfa;
 
@@ -45,7 +46,10 @@ contract Shop {
         require(block.number >= endblock, "Not yet :)");
         uint256 i = 0;
         uint256 len = buyers.length;
+        uint256 bal = tokenToPayIn.balanceOf(address(this));
         for (i = 0; i < len; ++i) {
+            uint256 share = _cfa.getFlow(_acceptedToken, sender, address(this));
+            buyerOwnership[buyers[i]] = share;
             _host.callAgreement(
                 _cfa,
                 abi.encodeWithSelector(
