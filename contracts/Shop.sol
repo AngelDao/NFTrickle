@@ -6,14 +6,12 @@ contract Shop {
 
     address NFT;
     address owner;
-    uint256 price;
     uint256 endBlock;
     address tokenToPayIn;
 
     constructor(
         address _NFT,
         address _owner,
-        uint256 _price,
         uint256 _endBlockBuffer,
         address _tokenToPayIn
     ) {
