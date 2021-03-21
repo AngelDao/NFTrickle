@@ -31,7 +31,7 @@ contract ShopFactory {
         IERC20 _tokenToPayIn
     ) public {
         require(
-            registeredClones[_NFT] == true,
+            registeredClones[_NFT] == false,
             "Clone has already been deployed"
         );
         uint256 nftbal = _NFT.balanceOf(address(this), 0);
