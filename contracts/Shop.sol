@@ -44,7 +44,7 @@ contract Shop {
         tokenToPayIn = _tokenToPayIn;
     }
 
-    function stop(uint256 _amount, uint256 _pid) public {
+    function stop() public {
         require(block.number >= endBlock, "Not yet :)");
         uint256 i = 0;
         uint256 len = buyers.length;
