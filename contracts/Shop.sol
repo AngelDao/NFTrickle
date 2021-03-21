@@ -8,6 +8,7 @@ contract Shop {
     address owner;
     uint256 endBlock;
     address tokenToPayIn;
+    address[] buyers;
 
     constructor(
         address _NFT,
@@ -24,6 +25,11 @@ contract Shop {
 
     function claim(uint256 _amount, uint256 _pid) public {
         require(block.number >= endblock, "Not yet :)");
+    }
+
+    function setBuyers(address[] _buyers) public {
+        require(owner == msg.sender, "Only owner can call");
+        buyers = _buyers;
     }
 
     function buy() public {}
