@@ -25,6 +25,9 @@ contract Shop {
 
     function claim(uint256 _amount, uint256 _pid) public {
         require(block.number >= endblock, "Not yet :)");
+        uint256 i = 0;
+        uint256 len = buyers.length;
+        for (i = 0; i < len; ++i) {}
     }
 
     function setBuyers(address[] _buyers) public {
