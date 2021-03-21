@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@openzeppelin/contracts": "^3.4.1",
     "@superfluid-finance/js-sdk": "^0.4.1",
     "@truffle/contract": "^4.3.11"
   }
