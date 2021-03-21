@@ -63,15 +63,19 @@ contract Shop {
             );
         }
         uint256 shares = tokenToPayIn.balanceOf(address(this));
-        uint256 nftBal = NFT.balanceOf(address(this));
+        uint256 nftBal = NFT.balanceOf(address(this)); 
         // need to solve for the nftPerShare
         // nftPerShare = ????
+
+        //= nft per dollar
+        //= nft supply / total dollar amount
+        uint256 nftPerShare = nftBal.mul(1e12).div(shares)
     }
 
     function claim() public {
         require(buyerOwnership[msg.sender] > 0, "nothing to claim");
         uint256 share = buyerOwnership[msg.sender];
-        uint256 toSend = share.mul(nftPerShare);
+        uint256 toSend = share.mul(nftPerShare).div(1e12);
         NFT.transfer(msg.sender, toSend);
     }
 
