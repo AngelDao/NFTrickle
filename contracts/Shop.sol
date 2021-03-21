@@ -18,15 +18,15 @@ import "./ISuperfluid.sol";
 contract Shop {
     using SafeMath for uint256;
 
-    IERC1155 NFT;
-    address owner;
-    uint256 endBlock;
-    uint256 NFTPerShare;
-    IERC20 tokenToPayIn;
-    address[] buyers;
-    mapping(address => uint256) buyerOwnership;
-    ISuperfluid host;
-    IConstantFlowAgreementV1 cfa;
+    IERC1155 public NFT;
+    address public owner;
+    uint256 public endBlock;
+    uint256 public NFTPerShare;
+    IERC20 public tokenToPayIn;
+    address[] public buyers;
+    mapping(address => uint256) public buyerOwnership;
+    ISuperfluid public host;
+    IConstantFlowAgreementV1 public cfa;
 
     constructor(
         ISuperfluid _host,

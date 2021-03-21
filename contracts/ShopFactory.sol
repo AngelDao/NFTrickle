@@ -10,8 +10,8 @@ import "./ISuperfluid.sol";
 contract ShopFactory {
     address owner;
 
-    mapping(IERC1155 => Shop) deployedClones;
-    mapping(IERC1155 => bool) registeredClones;
+    mapping(IERC1155 => Shop) public deployedClones;
+    mapping(IERC1155 => bool) public registeredClones;
     ISuperfluid host;
     IConstantFlowAgreementV1 cfa;
 
