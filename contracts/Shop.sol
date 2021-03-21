@@ -48,9 +48,11 @@ contract Shop {
         require(block.number >= endBlock, "Not yet :)");
         uint256 i = 0;
         uint256 len = buyers.length;
+        uint256 sum = 0;
         for (i = 0; i < len; ++i) {
             uint256 share = cfa.getFlow(tokenToPayIn, buyers[i], address(this));
             buyerOwnership[buyers[i]] = share;
+            sum = sum.add(share);
             host.callAgreement(
                 cfa,
                 abi.encodeWithSelector(
@@ -63,7 +65,7 @@ contract Shop {
                 "0x"
             );
         }
-        uint256 shares = tokenToPayIn.balanceOf(address(this));
+        uint256 shares = sum;
         uint256 nftBal = NFT.balanceOf(address(this), 0);
         // need to solve for the nftPerShare
         // nftPerShare = ????
@@ -71,6 +73,8 @@ contract Shop {
         //= nft per dollar
         //= nft supply / total dollar amount
         NFTPerShare = nftBal.mul(1e12).div(shares);
+        uint256 bal = tokenToPayIn.balanceOf(address(this));
+        tokenToPayIn.transfer(owner, bal);
     }
 
     function claim() public {
@@ -84,7 +88,6 @@ contract Shop {
             toSend,
             "0x0"
         );
-        (address(msg.sender), toSend);
     }
 
     function setBuyers(address[] memory _buyers) public {
